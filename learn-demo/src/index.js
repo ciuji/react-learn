@@ -1,15 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import PropsTypes from "prop-types";
 
-function Square(props) {
+
+
+function Square(prop) {
+
+/*     propTypes = {
+        props: PropsTypes.object,
+    }; */
+
     return (
         <button className="square"
-            onClick={props.onClick}
+            onClick={prop.onClick}
         >
-            {props.value}
+            {prop.value}
         </button>
-    )
+    );
 }
 
 function calculatewinner(squares) {
@@ -51,7 +59,7 @@ class Board extends React.Component {
         if (calculatewinner(squres) || squres[i]) {
             return;
         }
-        squres[i] = this.state.xIsNext ? 'x' : 'o';
+        squres[i] = this.state.xIsNext ? "x" : "o";
         this.setState({
             squres: squres,
             xIsNext: !this.state.xIsNext,
@@ -63,10 +71,10 @@ class Board extends React.Component {
                 this.setState({
                     squres: Array(9).fill(null),
                     xIsNext: true
-                })
+                });
             }}
         >reset
-            </button>
+        </button>;
 
     }
 
@@ -123,5 +131,5 @@ class Game extends React.Component {
 
 ReactDOM.render(
     <Game />,
-    document.getElementById('root')
+    document.getElementById("root")
 );
