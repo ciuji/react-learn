@@ -7,10 +7,6 @@ import PropsTypes from "prop-types";
 
 function Square(prop) {
 
-/*     propTypes = {
-        props: PropsTypes.object,
-    }; */
-
     return (
         <button className="square"
             onClick={prop.onClick}
